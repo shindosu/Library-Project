@@ -17,10 +17,16 @@ h1{
 
 #upload{
     margin: 0;
+    text-align: center;
+}
+
+#file{
+    display: none;
 }
 
 #manga{
     height: 500px;
+    width:400px;
     position: relative;
     top: 10px;
     border: none;
@@ -111,14 +117,3 @@ h1{
     position: relative;
     top: 50px;
 }
-
-/*
-.form-control{
-    border: 2px solid red;
-}
-
-.form-control:focus{
-    border: 2px solid red;
-}
-
-*/

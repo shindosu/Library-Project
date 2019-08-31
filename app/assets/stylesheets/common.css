@@ -1,0 +1,47 @@
+@font-face{
+    font-family:"futura-pt-demi";
+    src:url("https://fontsme.com/wp-data/f/745/14745/file/FuturaPTDemi.otf") format("woff"),
+    url("https://fontsme.com/wp-data/f/745/14745/file/FuturaPTDemi.otf") format("opentype"),
+    url("https://fontsme.com/wp-data/f/745/14745/file/FuturaPTDemi.otf") format("truetype");
+}
+
+body{
+    font-family: 'Circular', Avenir, sans-serif;
+    margin: 0;
+}
+
+nav{
+    height: 70px;
+    border-bottom: 1px solid rgb(187, 187, 187);
+}
+
+ul{
+    list-style: none;
+}
+
+.navbar-light{
+    background-color: #EFEFEF;
+}
+
+a{
+    margin-right: 30px;
+    color: #565656;
+}
+
+a:hover{
+    color:#FF0000;
+    transition-delay: 1000;
+}
+
+
+a.navbar-brand{
+    font-weight: bold;
+    font-size: 30px;
+    background-color:#FF0000;
+    color: #FAFAFA;
+}
+
+.logo:hover{
+    text-decoration: none;
+    color: #FAFAFA;
+}
