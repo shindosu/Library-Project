@@ -15,11 +15,7 @@
 
   <tbody>
     <% @books.each do |book| %>
-                <% if book.file.attached? %> <!--evaluates if thumbnail is attached-->
                <a href="<%=book_path(book) %>"><%= image_tag book.file.variant(resize: "400x500"), class: "thumbnails"%></a>  <!--image magick way to scale: .variant(resize) => only applies to images-->
-            <% elsif %>
-                <%= image_tag 'http://www.walterzebrowskiassoc.com/images/coming-soon2.jpg'%>
-            <% end %>
       <tr>
         <td><%= book.title %></td>
         <td><%= book.author %></td>
