@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+    <% if @book.file.attached? %> <!--evaluates if thumbnail is attached-->
+        <%= image_tag @book.file.variant(resize: "400x500")%> <!--image magick way to scale: .variant(resize) => only applies to images-->
+    <% elsif %>
+        <%= image_tag 'http://www.walterzebrowskiassoc.com/images/coming-soon2.jpg'%>
+        <% end %>
 <p>
   <strong>Title:</strong>
   <%= @book.title %>
@@ -19,6 +24,10 @@
   <strong>Rating:</strong>
   <%= @book.rating %>
 </p>
+<% @book.volumes.each do |volumes| %>
+        <%= image_tag volumes.preview(resize: "300x400") %>
+        <%= link_to "read more", volumes, :class => "btn btn-primary" %>
+    <% end %>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

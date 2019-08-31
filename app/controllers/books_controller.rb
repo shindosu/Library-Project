@@ -10,6 +10,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    @book = Book.find(params[:id]) #get individual post page
   end
 
   # GET /books/new
@@ -69,6 +70,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :author, :description, :rating)
+      params.require(:books).permit(:title, :author, :description, :rating, :file, volumes: [])
     end
 end

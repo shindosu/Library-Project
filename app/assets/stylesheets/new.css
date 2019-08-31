@@ -1,0 +1,124 @@
+body{
+    font-family: 'Circular', Avenir, sans-serif;
+    margin: 0;
+}
+.container{
+    position: relative;
+    margin: 0 auto;
+    height: 1500px;
+    top: 60px;
+}
+
+h1{
+    text-align: left;
+    font-weight: bold;
+    font-size: 35px；
+}
+
+#upload{
+    margin: 0;
+}
+
+#manga{
+    height: 500px;
+    position: relative;
+    top: 10px;
+    border: none;
+}
+
+.innerContent{
+    position: relative;
+    top: 200px;
+}
+
+#uploadImage{
+    position: relative;
+    top: 200px;
+}
+#img{
+    position: absolute;
+    bottom: -0.5%;
+    right: -0.5%;
+    height: 500px;
+    width: 400px;
+    border: 2px solid #b4b0b0;
+    background-color: #FAFAFA;
+    z-index: -1;
+}
+
+.form-group{
+    position: relative;
+    top: 50px;
+    margin-top: 40px;
+}
+
+.fa-upload{
+    position: relative;
+    top: 150px;
+}
+
+#manga:hover{
+    cursor: pointer;
+}
+
+.list-inline-item:hover{
+    cursor: pointer;
+}
+
+#mangaChap{
+    height: 500px;
+    width: 400px;
+    border: 2px solid #b4b0b0;
+    background-color: #FAFAFA;
+    text-align: center;
+    position: relative;
+    bottom: 40px;
+}
+
+#mangaChap:hover{
+    cursor: pointer;
+}
+
+#uploadChap{
+    text-align: center;
+}
+
+#volumes{
+    display: none;
+}
+
+#paraPDF{
+    text-align: center;
+    position: relative;
+    top: 100px;
+}
+
+#submit
+{
+    position: relative;
+    top: 200px;
+    left: 200px;
+    text-align: center;
+}
+
+.error{
+    color: red;
+}
+
+.uploadResults{
+    margin: 0 auto;
+    border-top: 1px solid #eaecef;
+    position: relative;
+    top: 50px;
+}
+
+/*
+.form-control{
+    border: 2px solid red;
+}
+
+.form-control:focus{
+    border: 2px solid red;
+}
+
+*/
