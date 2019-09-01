@@ -1,4 +1,26 @@
-.mangaUpload{
-    border: 2px gray solid;
-    width: 500px;
+body{
+    margin: 0;
+    font-family: 'Circular', Avenir, sans-serif;
 }
+
+.thumbnails{
+    border: 2px gray solid;
+}
+
+ul{
+    padding: 0;
+}
+
+.manga{
+    padding: 0;
+}
+
+.mangaTitle{
+    position: absolute;
+    text-align: center;
+    color:red;
+}
+
+
+
+
