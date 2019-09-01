@@ -15,3 +15,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 Rails.application.config.assets.precompile += %w( new.css )
 Rails.application.config.assets.precompile += %w( new.js )
+Rails.application.config.assets.precompile += %w( common.css )
+Rails.application.config.assets.precompile += %w( list.css )

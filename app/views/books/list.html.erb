@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%= stylesheet_link_tag 'list', media: 'all', 'data-turbolinks-track': 'reload'%>
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="container">
+    <div class="chronological">
+        <button class="btn btn-primary" value="#">#</button>
+        <button class="btn btn-primary" value="A">A</button>
+        <button class="btn btn-primary" value="A">B</button>
+        <button class="btn btn-primary" value="A">C</button>
+        <button class="btn btn-primary" value="A">D</button>
+        <button class="btn btn-primary" value="A">E</button>
+        <button class="btn btn-primary" value="A">F</button>
+        <button class="btn btn-primary" value="A">G</button>
+        <button class="btn btn-primary" value="A">H</button>
+        <button class="btn btn-primary" value="A">I</button>
+        <button class="btn btn-primary" value="A">J</button>
+        <button class="btn btn-primary" value="A">K</button>
+        <button class="btn btn-primary" value="A">L</button>
+        <button class="btn btn-primary" value="A">M</button>
+        <button class="btn btn-primary" value="A">N</button>
+        <button class="btn btn-primary" value="A">O</button>
+        <button class="btn btn-primary" value="A">P</button>
+        <button class="btn btn-primary" value="A">Q</button>
+        <button class="btn btn-primary" value="A">R</button>
+        <button class="btn btn-primary" value="A">S</button>
+        <button class="btn btn-primary" value="A">T</button>
+        <button class="btn btn-primary" value="A">U</button>
+        <button class="btn btn-primary" value="A">V</button>
+        <button class="btn btn-primary" value="A">W</button>
+        <button class="btn btn-primary" value="A">X</button>
+        <button class="btn btn-primary" value="A">Y</button>
+        <button class="btn btn-primary" value="A">Z</button>
+    </div>
+
+    <div id="mangaList">
+        <ul>
+            <% @books.each do |book|%>
+            <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            
+            <% end %>
+        </ul>
+    </div>
+
+</div>
+
+
+</body>
+</html>

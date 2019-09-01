@@ -7,6 +7,11 @@ class BooksController < ApplicationController
     @books = Book.all
   end
 
+  def list 
+    @books = Book.all
+  end
+
+
   # GET /books/1
   # GET /books/1.json
   def show
