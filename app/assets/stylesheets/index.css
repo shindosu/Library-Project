@@ -3,12 +3,29 @@ body{
     font-family: 'Circular', Avenir, sans-serif;
 }
 
-.thumbnails{
-    border: 2px gray solid;
+.container{
+    position: relative;
+    top:100px;
 }
 
-ul{
+.row{
+    position: relative;
+    top: 50px;
+}
+.thumbnails{
+    box-shadow: 8px 7px 9px -6px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 8px 7px 9px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 8px 7px 9px -6px rgba(0,0,0,0.75);
+}
+
+.thumbnails:hover{
+    opacity: 0.8;
+    transition: 3000;
+}
+
+.mangaCard{
     padding: 0;
+    margin-top: 20px;
 }
 
 .manga{
@@ -21,6 +38,11 @@ ul{
     color:red;
 }
 
+.latestUploads{
+    position: relative;
+    bottom: 30px;
+    border-bottom: 2px gray solid;
+}
 
 
 

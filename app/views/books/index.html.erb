@@ -12,13 +12,15 @@
 </head>
 
 <p id="notice"><%= notice %></p>
-<h2>Latest Uploads</h2>
 
 <div class="container">
+  <div class="latestUploads">
+    <h2>Latest Uploads</h2>
+  </div>
   <div class="row">
     <% @books.each do |book| %>
-    <ul>
-      <div class="manga col-md-3 col-sm- col-xs-6">
+    <ul class="mangaCards">
+      <div class="manga col-md-3 col-sm-6 col-xs-6">
         <li><a href="<%=book_path(book) %>"><%= image_tag book.file.variant(resize: "180x250!"), class: "thumbnails"%></a>  <!--image magick way to scale: .variant(resize) => only applies to images--></li><br>
       </div> 
       <li class = "mangaTitle"><a ><%= link_to book.title, book%></a></li>

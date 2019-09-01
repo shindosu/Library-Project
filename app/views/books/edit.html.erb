@@ -1,6 +1,103 @@
-<h1>Editing Book</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <%= stylesheet_link_tag 'new', media: 'all', 'data-turbolinks-track': 'reload'%>
+    <%= stylesheet_link_tag 'common', media: 'all', 'data-turbolinks-track': 'reload'%>
+    <title>Test Add Book</title>
+</head>
 
-<%= render 'form', book: @book %>
+<body>
 
-<%= link_to 'Show', @book %> |
-<%= link_to 'Back', books_path %>
+<div class="container">
+  <%= form_for :books, url: books_path, class: 'col-lg-12 col-md-12 col-sm-12 col-xs-12' do |f|%> <!--for :controller, url: controller_path. must have resources-->
+  <h1 id="addBook" style="border-bottom: 1px solid gray;">EDIT INFORMATION</h1>
+    <div id="upload" class="form-group">
+      <label for="file" id="manga"><i class="far fa-image fa-3x innerContent" id="uploadImage" style="color: #279AF1;"></i><br><h4 class = "innerContent">Update Thumbnail</h4><br><img src="" alt="" id="img"></label>
+      <%= f.file_field(:file, {:id => "file", accept:"image/jpg, image/jpeg, image/png" }) %> 
+      <p> <br> Recommneded file size: 400x500 <br> Accepts jpg, jpeg, png files</p>
+    </div>
+
+    <div class="form-group">
+      <h5>Title <span style="color:red">*</span></h5>
+          <%= f.text_field(:title, {:class => "form-control", placeholder: "Title", id: "title", value:@book.title}) %>
+        <p class="error"><%= @book.errors.full_messages[0]%></p>
+    </div>
+
+    <div class="form-group">
+      <h5>Author(s) <span style="color:red">*</span></h5> 
+      <%= f.text_field(:author, {:class => "form-control", placeholder: "Author", id: "author", value:@book.author}) %>
+      <p class="error"><%= @book.errors.full_messages[1]%></p>
+    </div>
+
+    <div class="form-group">
+      <h5>Description <span style="color:red">*</span></h5> 
+      <%= f.text_area(:description, {:class => "form-control z-depth-1", placeholder: "Description", id: "exampleFormControlTextarea6", rows: "5", placeholder: "Description", value:@book.description}) %>
+      <p class="error"><%= @book.errors.full_messages[2]%></p>
+    </div>
+
+    <div class="form-group">
+      <h5>Status <span style="color:red">*</span></h5>
+      <%= f.select :status, ["Ongoing","Completed","Cancelled"], :class => "custom-select", required: true %> 
+    </div>
+
+    <div class="form-group">
+      <h5>Genre(s) <span style="color:red">*</span></h5> <p class="error"><%= @book.errors.full_messages%></p>
+        <%= f.check_box :genres,{multiple: true}, "action", nil%> Action <br>
+        <%= f.check_box :genres, {multiple: true}, "adventure", nil%> Adventure <br>
+        <%= f.check_box :genres, {multiple: true}, "comedy", nil%> Comedy <br>
+        <%= f.check_box :genres, {multiple: true}, "drama", nil%> Drama <br>
+        <%= f.check_box :genres, {multiple: true}, "ecchi", nil%> Ecchi <br>
+        <%= f.check_box :genres, {multiple: true}, "fantasy", nil%> Fantasy <br>
+        <%= f.check_box :genres, {multiple: true}, "horror", nil%> Horror <br>
+        <%= f.check_box :genres, {multiple: true}, "magic", nil%> Magic <br>
+        <%= f.check_box :genres, {multiple: true}, "mystery", nil%> Mystery <br>
+        <%= f.check_box :genres, {multiple: true}, "psychological", nil%> Psychological <br>
+        <%= f.check_box :genres, {multiple: true}, "sciFi", nil%> Sci Fi <br> 
+        <%= f.check_box :genres, {multiple: true}, "sliceofLife", nil%> Slice of Life <br>
+        <%= f.check_box :genres, {multiple: true}, "supernaural", nil%> Supernatural <br>
+        <h6>Or Add a Custom Genre(s)</h6>
+        <%= f.text_field(:customGenre, {:class => "form-control", placeholder: "Custom Genre", id: "customGenre"}) %>
+    </div>
+
+    <div class="form-group">
+      <h5>Ratings</h5>
+    <%= f.number_field :rating, value:@book.rating %>
+    </div>
+    
+    <div class="form-group">
+      <h5>Update Volumes/Chapters <span style="color:red">*</span></h5><p class="error"><%= @book.errors.full_messages[3]%></p>
+      <div id="uploadChap" class="form-group">
+      <label for="volumes" id="mangaChap"><i class="fas fa-plus fa-3x innerContent" id="uploadImage" style="color: #279AF1;"></i><br><h4 class = "innerContent">Upload Volumes/Chapters</h4></label>
+      <%= f.file_field(:volumes, {id: "volumes", accept:"application/pdf", multiple: true}) %>
+      </div>
+       <p id="paraPDF"> PDF files only <br> Accepts multiple files</p>
+
+       <% @book.volumes.each do |volumes| %>
+        <%= image_tag volumes.preview(resize: "300x400") %>
+        <%= link_to "read more", volumes, :class => "btn btn-primary" %>
+    <% end %>
+    </div>
+
+
+    <%= f.button :submit, :class => "btn btn-primary", :id => "submit" %>
+
+    <%= link_to 'Back', books_path %>
+
+
+
+
+    
+  <% end %>
+</div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/c4c286882a.js"></script>
+</body>
+</html>
