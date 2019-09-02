@@ -3,6 +3,37 @@ body{
     margin: 0;
 }
 
+#title{
+    border-bottom: solid gray 2px;
+    text-align: center;
+}
+
+.containerShow{
+    position: relative;
+    top: 100px;
+}
+
 .image{
     border: solid gray 2px;
+}
+
+#mangaThumb{
+
+    margin:0;
+    position: relative;
+    text-align: right;
+    padding: 10px!importamt;
+}
+
+#mangaInfo{
+}
+
+.volumes{
+    position: relative;
+    top: 200px;
+}
+
+.volumeTitle{
+    position: relative;
+    bottom: 40px;
 }

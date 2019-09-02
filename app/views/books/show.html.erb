@@ -13,46 +13,34 @@
 
 <p id="notice"><%= notice %></p>
 
-<div class="container">
+<div class="containerShow">
+  <div id="title"><h1><%= @book.title %></h1></div>
   <div class="row">
-    <div class=" col-md-6 col-sm-12 col-xs-12">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="mangaThumb">
       <% if @book.file.attached? %> <!--evaluates if thumbnail is attached-->
         <%= image_tag @book.file.variant(resize: "400x500"), class: "image"%> <!--image magick way to scale: .variant(resize) => only applies to images-->
       <% elsif %>
         <%= image_tag 'http://www.walterzebrowskiassoc.com/images/coming-soon2.jpg'%>
-        <% end %>
+      <% end %>
     </div>
-
-    <div class="information col-md-6 col-sm-12 col-xs-12">
-    <p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @book.author %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @book.description %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @book.rating %>
-</p>
-
-<%= link_to 'Edit Information', edit_book_path(@book) %> 
+    
+    <div class="col-lg col-md col-sm col-xs" id="mangaInfo">
+      <label for="<%=@book.author%>"> <h5>Author(s):</h5> </label> <%= @book.author %>  <br>
+      <label for="<%=@book.rating%>"> <h5>Rating:</h5> </label> <%= @book.rating %> <br>
+      <label for="<%=@book.description%>"> <h5>Description:</h5> </label> <%= @book.description %> <br>
+      <%= link_to 'Edit Information', edit_book_path(@book) %> 
     </div>
   </div>
 </div>
 
-<% @book.volumes.each do |volumes| %>
-        <%= image_tag volumes.preview(resize: "300x400") %>
-        <%= link_to "read more", volumes, :class => "btn btn-primary" %>
-    <% end %>
+<div class="volumes">
+<h5><%= @book.title %> Volumes List</h5>
+  <% @book.volumes.each do |volumes| %>
+    <%= image_tag volumes.preview(resize: "300x400") %> 
+    <%= link_to "read more", volumes, :class => "btn btn-primary" %>
+  <% end %>
+</div>
+
   
 <%= link_to 'Destroy', @book, method: :delete, data: { confirm: 'Are you sure?' } %></td>|
 <%= link_to 'Back', books_path %>

@@ -16,11 +16,11 @@ body{
     box-shadow: 8px 7px 9px -6px rgba(0,0,0,0.75);
     -webkit-box-shadow: 8px 7px 9px -6px rgba(0,0,0,0.75);
     -moz-box-shadow: 8px 7px 9px -6px rgba(0,0,0,0.75);
+    transition-duration: 0.3s;
 }
 
 .thumbnails:hover{
-    opacity: 0.8;
-    transition: 3000;
+    opacity: 0.7;
 }
 
 .mangaCard{
