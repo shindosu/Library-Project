@@ -15,12 +15,17 @@ h1{
     font-size: 35px；
 }
 
-#upload{
+.upload{
     margin: 0;
     text-align: center;
 }
 
+
 #file{
+    display: none;
+}
+
+#banner{
     display: none;
 }
 
@@ -32,12 +37,26 @@ h1{
     border: none;
 }
 
-.innerContent{
+#mangaBanner{
+    height: 500px;
+    width:1200px;
+    position: relative;
+    top: 10px;
+    border: none;
+}
+
+
+#innerContent{
     position: relative;
     top: 200px;
 }
 
-#uploadImage{
+#bannerContent{
+    position: relative;
+    top: 200px;
+}
+
+.uploadImage{
     position: relative;
     top: 200px;
 }
@@ -48,6 +67,17 @@ h1{
     right: -0.5%;
     height: 500px;
     width: 400px;
+    border: 2px solid #b4b0b0;
+    background-color: #FAFAFA;
+    z-index: -1;
+}
+
+#imgBanner{
+    position: absolute;
+    bottom: -0.5%;
+    right: -0.5%;
+    height: 500px;
+    width: 1200px;
     border: 2px solid #b4b0b0;
     background-color: #FAFAFA;
     z-index: -1;
@@ -67,6 +97,10 @@ h1{
 }
 
 #manga:hover{
+    cursor: pointer;
+}
+
+#mangaBanner{
     cursor: pointer;
 }
 

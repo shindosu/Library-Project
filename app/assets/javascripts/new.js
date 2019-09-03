@@ -1,6 +1,6 @@
 //Upload Thumbnail 
 $('#file').change(function(){
- var preview = document.querySelector('img')  
+ var preview = document.querySelector('#img')  
  var file = document.querySelector('input[type=file]').files[0];
  var reader = new FileReader();
 
@@ -17,10 +17,35 @@ $('#file').change(function(){
   var fileName  = files.split('.')[0];// SPLIT: string -> array. EX: C:\fakepath\[春場ねぎ] 五等分の花嫁 第07巻.pdf, split strings before & after . and make it into an array of [[春場ねぎ] 五等分の花嫁 第07巻, pdf] -> [0] will get the first index
   console.log(fileName);
   document.getElementById('title').value= fileName;
-  document.querySelector('.innerContent').style.display = "none";
-  document.querySelector('h4').style.display = "none";
+  document.querySelector('#innerContent').style.display = "none";
+  document.querySelector('#thumbHeader').style.display = "none";
   
 })
+
+//Upload Banner
+$('#banner').change(function(){
+  var previewBanner = document.querySelector('#imgBanner')  
+  var file = document.querySelector('input[type=file]').files[0];
+  var readerBanner = new FileReader();
+ 
+  readerBanner.addEventListener('load', function(){
+    previewBanner.src = readerBanner.result;
+  },false);
+ 
+  if(file){
+   $('#imgBanner > #mangaBanner').innerHTML =reader.readAsDataURL(file);  
+  }
+ 
+   var fileInput = document.querySelector('#banner'); //select files 
+   var files = fileInput.files[0].name; //catches the files (multiple or single) uploaded
+   var fileName  = files.split('.')[0];// SPLIT: string -> array. EX: C:\fakepath\[春場ねぎ] 五等分の花嫁 第07巻.pdf, split strings before & after . and make it into an array of [[春場ねぎ] 五等分の花嫁 第07巻, pdf] -> [0] will get the first index
+   console.log(fileName);
+   document.querySelector('#bannerContent').style.display = "none";
+   document.querySelector('#bannerName').style.display = "none";
+   
+ })
+
+
 
 //Upload change color 
 $('#uploadImage').click(function(){

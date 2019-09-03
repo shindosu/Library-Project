@@ -13,17 +13,18 @@
 
 <body>
 <div class="container">
-  <%= form_for :books, url: books_path, class: 'col-lg-12 col-md-12 col-sm-12 col-xs-12' do |f|%> <!--for :controller, url: controller_path. must have resources-->
+  <%= form_for :books, url: books_path do |f|%> <!--for :controller, url: controller_path. must have resources-->
   <h1 id="addBook" style="border-bottom: 1px solid gray;">ADD MANGA</h1>
-    <div id="upload" class="form-group">
-      <label for="file" id="manga"><i class="far fa-image fa-3x innerContent" id="uploadImage" style="color: #279AF1;"></i><br><h4 class = "innerContent">Upload Thumbnail</h4><br><img src="" alt="" id="img"></label>
+  
+    <div class="form-group upload">
+      <label for="file" id="manga"><i class="far fa-image fa-3x" class="uploadImage" style="color: #279AF1;" id="innerContent"></i><br><h4 id="thumbHeader">Upload Thumbnail</h4><br><img src="" alt="" id="img"></label>
       <%= f.file_field(:file, {:id => "file", accept:"image/jpg, image/jpeg, image/png" }) %> 
       <p> <br> Recommneded file size: 400x500 <br> Accepts jpg, jpeg, png files</p>
     </div>
 
-    <div id="upload" class="form-group">
-      <label for="file" id="manga"><i class="far fa-image fa-3x innerContent" id="uploadImage" style="color: #279AF1;"></i><br><h4 class = "innerContent">Upload Thumbnail</h4><br><img src="" alt="" id="img"></label>
-      <%= f.file_field(:file, {:id => "file", accept:"image/jpg, image/jpeg, image/png" }) %> 
+    <div class="form-group upload">
+      <label for="banner" id="mangaBanner"><i class="far fa-image fa-3x" class="uploadImage" style="color: #279AF1;" id="bannerContent"></i><br><h4 class = "innerContent" id="bannerName">Upload Banner Image</h4><br><img src="" alt="" id="imgBanner"></label>
+      <%= f.file_field(:banner, {:id => "banner", accept:"image/jpg, image/jpeg, image/png" }) %> 
       <p> <br> Recommneded file size: 400x500 <br> Accepts jpg, jpeg, png files</p>
     </div>
 
