@@ -3,7 +3,7 @@ body{
 }
 
 nav{
-    height: 70px;
+    height: 80px;
     border-bottom: 1px solid rgb(187, 187, 187);
 }
 
@@ -12,7 +12,7 @@ ul{
 }
 
 .navbar-light{
-    background-color: #EFEFEF;
+    background-color: #FFFFFF;
 }
 
 .navbar-nav{
@@ -33,15 +33,16 @@ a{
     font-family: 'Circular', Avenir, sans-serif;
     font-size: 17px;
     margin-right: 40px;
-    color: #565656;
+    color: #4b4b4b;
 }
 
 a:hover{
-    color: red;
+    color: #9c9c9c;
+    text-decoration: none;
     transition-delay: 1000;
     background-color: transparent;
+    color: none;
 }
-
 
 .logo:hover{
     text-decoration: none;

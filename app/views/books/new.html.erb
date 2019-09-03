@@ -21,6 +21,12 @@
       <p> <br> Recommneded file size: 400x500 <br> Accepts jpg, jpeg, png files</p>
     </div>
 
+    <div id="upload" class="form-group">
+      <label for="file" id="manga"><i class="far fa-image fa-3x innerContent" id="uploadImage" style="color: #279AF1;"></i><br><h4 class = "innerContent">Upload Thumbnail</h4><br><img src="" alt="" id="img"></label>
+      <%= f.file_field(:file, {:id => "file", accept:"image/jpg, image/jpeg, image/png" }) %> 
+      <p> <br> Recommneded file size: 400x500 <br> Accepts jpg, jpeg, png files</p>
+    </div>
+
     <div class="form-group">
       <h5>Title <span style="color:red">*</span></h5>
           <%= f.text_field(:title, {:class => "form-control", placeholder: "Title", id: "title"}) %>
@@ -88,4 +94,4 @@
   <script src="https://kit.fontawesome.com/c4c286882a.js"></script>
 </body>
 </html>
-<%= link_to 'Back', books_path %>
+

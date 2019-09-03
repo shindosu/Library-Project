@@ -41,6 +41,7 @@ h1{
     position: relative;
     top: 200px;
 }
+
 #img{
     position: absolute;
     bottom: -0.5%;
@@ -51,6 +52,8 @@ h1{
     background-color: #FAFAFA;
     z-index: -1;
 }
+
+
 
 .form-group{
     position: relative;
