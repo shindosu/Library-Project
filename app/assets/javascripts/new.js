@@ -23,27 +23,26 @@ $('#file').change(function(){
 })
 
 //Upload Banner
-$('#banner').change(function(){
-  var previewBanner = document.querySelector('#imgBanner')  
-  var file = document.querySelector('input[type=file]').files[0];
-  var readerBanner = new FileReader();
- 
-  readerBanner.addEventListener('load', function(){
-    previewBanner.src = readerBanner.result;
-  },false);
- 
-  if(file){
-   $('#imgBanner > #mangaBanner').innerHTML =reader.readAsDataURL(file);  
-  }
- 
-   var fileInput = document.querySelector('#banner'); //select files 
-   var files = fileInput.files[0].name; //catches the files (multiple or single) uploaded
-   var fileName  = files.split('.')[0];// SPLIT: string -> array. EX: C:\fakepath\[春場ねぎ] 五等分の花嫁 第07巻.pdf, split strings before & after . and make it into an array of [[春場ねぎ] 五等分の花嫁 第07巻, pdf] -> [0] will get the first index
-   console.log(fileName);
-   document.querySelector('#bannerContent').style.display = "none";
-   document.querySelector('#bannerName').style.display = "none";
+$('#banner').change(function(event) {
+    var input = event.target;
+  
+    var reader = new FileReader();
+    reader.onload = function(){
+      var dataURL = reader.result;
+      var output = document.getElementById('imgBanner');
+      output.src = dataURL;
+    };
+    reader.readAsDataURL(input.files[0]);
+     
+    var fileInput = document.querySelector('#banner'); //select files 
+    var files = fileInput.files[0].name; //catches the files (multiple or single) uploaded
+    var fileName  = files.split('.')[0];// SPLIT: string -> array. EX: C:\fakepath\[春場ねぎ] 五等分の花嫁 第07巻.pdf, split strings before & after . and make it into an array of [[春場ねぎ] 五等分の花嫁 第07巻, pdf] -> [0] will get the first index
+    console.log(fileName);
+    document.querySelector('#bannerContent').style.display = "none";
+    document.querySelector('#bannerName').style.display = "none";
+  });
    
- })
+
 
 
 
