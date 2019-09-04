@@ -45,6 +45,15 @@ h1{
     border: none;
 }
 
+#thumbHeader{
+    position: relative;
+    top: 200px;
+}
+
+#bannerName{
+    position: relative;
+    top: 200px;
+}
 
 #innerContent{
     position: relative;
@@ -56,7 +65,12 @@ h1{
     top: 200px;
 }
 
-.uploadImage{
+#uploadImage{
+    position: relative;
+    top: 200px;
+}
+
+#volumeName{
     position: relative;
     top: 200px;
 }
