@@ -48,7 +48,7 @@
 
     <div class="form-group">
       <h5>Status <span style="color:red">*</span></h5>
-      <%= f.select :status, ["Ongoing","Completed","Cancelled"], :class => "custom-select", required: true %> 
+      <%= f.select :status, options_for_select([['Ongoing','Ongoing'],['Completed','Completed'],['Incomplete','Incomplete']]), :class => "custom-select", :prompt => "Choose Status", required: true %> 
     </div>
 
     <div class="form-group">

@@ -114,11 +114,7 @@ h1{
     cursor: pointer;
 }
 
-#mangaBanner{
-    cursor: pointer;
-}
-
-.list-inline-item:hover{
+#mangaBanner:hover{
     cursor: pointer;
 }
 
