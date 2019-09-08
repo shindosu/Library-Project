@@ -97,3 +97,42 @@ $('#volumes').change(function(){
   }
 });
 
+
+/*
+ <%= check_box_tag 'music[genre][]', "Action", checked('Action'), id: 'genre_action' %> Action <br>
+        <%= check_box_tag 'music[genre][]', "Adventure", checked('Adventrue'), id: 'genre_adventrue' %> Adventure <br>
+        <%= check_box_tag 'music[genre][]', "Comedy", checked('Comedy'), id: 'genre_comedy' %> Comedy <br>
+        <%= check_box_tag 'music[genre][]', "Drama", checked('Drama'), id: 'genre_drama' %> Drama <br>
+        <%= check_box_tag 'music[genre][]', "Ecchi", checked('Ecchi'), id: 'genre_ecchi' %> Ecchi <br>
+        <%= check_box_tag 'music[genre][]', "Fantasy", checked('Fantasy'), id: 'genre_fantasy' %> Fantasy <br>
+        <%= check_box_tag 'music[genre][]', "Horror", checked('Horror'), id: 'genre_horror' %> Horrot <br>
+        <%= check_box_tag 'music[genre][]', "Magic", checked('Magic'), id: 'genre_magic' %> Magic <br>
+        <%= check_box_tag 'music[genre][]', "Mystery", checked('Mystery'), id: 'genre_mystery' %> Mystery <br>
+        <%= check_box_tag 'music[genre][]', "Psychological", checked('Psychological'), id: 'genre_psychological' %> Psychological <br>
+        <%= check_box_tag 'music[genre][]', "Sci Fi", checked('Sci Fi'), id: 'genre_sci_fi' %> Sci Fi  <br>
+        <%= check_box_tag 'music[genre][]', "Slice of Life", checked('Slice of Life'), id: 'genre_slice_of_life' %> Slice of Life <br>
+        <%= check_box_tag 'music[genre][]', "Supernatural", checked('Supernatural'), id: 'genre_supernatural' %> Supernatural <br>
+       
+             <% @book_genre.each do |genre| %>
+      <%= f.check_box :genre,
+          {multiple: true,
+          checked: @book.genre.present? ? @book.genre.split(",").include
+          genre, nil}
+        %> <%%=genre%>
+      <%end%>
+
+          GENRE_LIST = ["Action","Adventure","Comedy","Drama","Ecchi","Fantasy", "Horror","Magic","Mystery","Psychological","Romance","Sci Fi","Slice of Life","Supernatural"]
+               <%= f.check_box :genres, {multiple: true}, "Action", nil%> Action <br>
+        <%= f.check_box :genres, {multiple: true}, "Adventure", nil%> Adventure <br>
+        <%= f.check_box :genres, {multiple: true}, "Comedy", nil%> Comedy <br>
+        <%= f.check_box :genres, {multiple: true}, "Drama", nil%> Drama <br>
+        <%= f.check_box :genres, {multiple: true}, "Ecchi", nil%> Ecchi <br>
+        <%= f.check_box :genres, {multiple: true}, "Fantasy", nil%> Fantasy <br>
+        <%= f.check_box :genres, {multiple: true}, "Horror", nil%> Horror <br>
+        <%= f.check_box :genres, {multiple: true}, "Magic", nil%> Magic <br>
+        <%= f.check_box :genres, {multiple: true}, "Mystery", nil%> Mystery <br>
+        <%= f.check_box :genres, {multiple: true}, "Psychological", nil%> Psychological <br>
+        <%= f.check_box :genres, {multiple: true}, "Sci Fi", nil%> Sci Fi <br> 
+        <%= f.check_box :genres, {multiple: true}, "Slice of Life", nil%> Slice of Life <br>
+        <%= f.check_box :genres, {multiple: true}, "Supernaural", nil%> Supernatural <br> */
+

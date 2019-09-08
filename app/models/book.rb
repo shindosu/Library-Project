@@ -6,5 +6,8 @@ class Book < ApplicationRecord
     validates :author, presence: true
     validates_presence_of :description
     validates_presence_of :volumes
-
+    
+    before_save do
+        self.genre.gsub!(/[\[\]\"]/, "") if attribute_present?("genre")
+      end
 end

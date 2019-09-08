@@ -53,19 +53,21 @@
 
     <div class="form-group">
       <h5>Genre(s) <span style="color:red">*</span></h5> <p class="error"><%= @book.errors.full_messages%></p>
-        <%= f.check_box :genres,{multiple: true}, "action", nil%> Action <br>
-        <%= f.check_box :genres, {multiple: true}, "adventure", nil%> Adventure <br>
-        <%= f.check_box :genres, {multiple: true}, "comedy", nil%> Comedy <br>
-        <%= f.check_box :genres, {multiple: true}, "drama", nil%> Drama <br>
-        <%= f.check_box :genres, {multiple: true}, "ecchi", nil%> Ecchi <br>
-        <%= f.check_box :genres, {multiple: true}, "fantasy", nil%> Fantasy <br>
-        <%= f.check_box :genres, {multiple: true}, "horror", nil%> Horror <br>
-        <%= f.check_box :genres, {multiple: true}, "magic", nil%> Magic <br>
-        <%= f.check_box :genres, {multiple: true}, "mystery", nil%> Mystery <br>
-        <%= f.check_box :genres, {multiple: true}, "psychological", nil%> Psychological <br>
-        <%= f.check_box :genres, {multiple: true}, "sciFi", nil%> Sci Fi <br> 
-        <%= f.check_box :genres, {multiple: true}, "sliceofLife", nil%> Slice of Life <br>
-        <%= f.check_box :genres, {multiple: true}, "supernaural", nil%> Supernatural <br>
+       <%= check_box_tag 'music[genre][]', "Action", checked_genre('Action'), id: 'genre_action' %> Action <br>
+       <%= check_box_tag 'music[genre][]', "Adventure", checked_genre('Adventrue'), id: 'genre_adventrue' %> Adventure <br>
+        <%= check_box_tag 'music[genre][]', "Comedy", checked_genre('Comedy'), id: 'genre_comedy' %> Comedy <br>
+        <%= check_box_tag 'music[genre][]', "Drama", checked_genre('Drama'), id: 'genre_drama' %> Drama <br>
+        <%= check_box_tag 'music[genre][]', "Ecchi", checked_genre('Ecchi'), id: 'genre_ecchi' %> Ecchi <br>
+        <%= check_box_tag 'music[genre][]', "Fantasy", checked_genre('Fantasy'), id: 'genre_fantasy' %> Fantasy <br>
+        <%= check_box_tag 'music[genre][]', "Horror", checked_genre('Horror'), id: 'genre_horror' %> Horrot <br>
+        <%= check_box_tag 'music[genre][]', "Magic", checked_genre('Magic'), id: 'genre_magic' %> Magic <br>
+        <%= check_box_tag 'music[genre][]', "Mystery", checked_genre('Mystery'), id: 'genre_mystery' %> Mystery <br>
+        <%= check_box_tag 'music[genre][]', "Psychological", checked_genre('Psychological'), id: 'genre_psychological' %> Psychological <br>
+        <%= check_box_tag 'music[genre][]', "Romance", checked_genre('Romance'), id: 'genre_romance' %> Psychological <br>
+        <%= check_box_tag 'music[genre][]', "Sci Fi", checked_genre('Sci Fi'), id: 'genre_sci_fi' %> Sci Fi  <br>
+        <%= check_box_tag 'music[genre][]', "Slice of Life", checked_genre('Slice of Life'), id: 'genre_slice_of_life' %> Slice of Life <br>
+        <%= check_box_tag 'music[genre][]', "Supernatural", checked_genre('Supernatural'), id: 'genre_supernatural' %> Supernatural <br>
+      
         <h6>Or Add a Custom Genre(s)</h6>
         <%= f.text_field(:customGenre, {:class => "form-control", placeholder: "Custom Genre", id: "customGenre"}) %>
     </div>
