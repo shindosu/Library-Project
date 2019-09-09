@@ -10,17 +10,20 @@
     <%= stylesheet_link_tag 'show', media: 'all', 'data-turbolinks-track': 'reload'%>
     <title>Test Add Book</title>
 </head>
+       <div id= "mangaIntro">
+ <%=  image_tag @book.banner.variant(resize:"2000x800"), class: "img-fluid"%>
+ <div id="text">
+       <h1 > <%= @book.title%> </h1> 
+      <h3 > <%= @book.author%> </h3>
+ </div>
+      </div>
 <div class="containerShow">
   <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style=" background-image: url(<%= link_to image_tag @book.banner.variant(resize: "1200x800"), class: "img-fluid"%>)"></div>
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id= "mangaIntro">
-      <h1 > <%= @book.title%> </h1> 
-      <h3 > <%= @book.author%> </h3>
-      </div>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="mangaInfo">
+  <div id="status">
+        <%= @book.status %> 
+  </div>
 
-      <label for="<%=@book.status%>"> <h5>Status:</h5> </label> <%= @book.status %>  <br>
-      <label for="<%=@book.rating%>"> <h5>Rating:</h5> </label> <%= @book.rating %> <br>
+       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="mangaInfo">
       <label for="<%=@book.genre%>"> <h5>Genre:</h5> </label> <%= @book.genre %><br>
       <label for="<%=@book.description%>"> <h5>Description:</h5> </label> <%= @book.description %> <br>
       <%= link_to 'Edit Information', edit_book_path(@book) %> 

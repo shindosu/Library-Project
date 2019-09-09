@@ -1,6 +1,7 @@
-body{
+html, body{
     font-family: 'Circular', Avenir, sans-serif;
     margin: 0;
+    padding: 0;
 }
 
 .containerShow{
@@ -9,27 +10,41 @@ body{
     z-index: -1;
 }
 #mangaIntro{
-    position: absolute;
-    color: #fafafa;
-    filter: brightness(90%);
-    text-align: center;
+    position: relative;/*position*/ 
+    display: inline-block;/*position*/ 
 }
 
-#mangaIntro h1{
+#mangaIntro #text{
+    position: absolute;/*position*/ 
+    margin: 0 auto;/*position*/ 
+    left: 0; /*position*/ 
+    right: 0; /*position*/
+    color: #fafafa;
+    text-align: center;/*position*/ 
+    bottom: 35%;
+}
+#text h1{
     font-size: 5vw;
 }
 
-#mangaIntro h3{
+#text h3{
     font-size: 2vw;
-
 }
 
 .img-fluid{
-    display: block;
     filter: brightness(50%);
-    width: 100%; /*bootstrap auto resize* combine with img-fluid*/
-    height: auto; /*bootstrap auto resize*/ 
     z-index:-1;
+}
+
+#status{
+    background-color: beige;
+    position: relative;
+    left: 40px;
+    top: 15px;
+    font-weight: bold;
+    font-size: 2vw;
+    padding: 5px;
+}
 }
 #mangaInfo{
     text-align: center;
