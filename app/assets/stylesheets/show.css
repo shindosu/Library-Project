@@ -3,13 +3,16 @@ body{
     margin: 0;
 }
 
+.containerShow{
+    position: relative; 
+    bottom: 50px;
+    z-index: -1;
+}
 #mangaIntro{
     position: absolute;
-    left: 40%;
-    top: 30%;
     color: #fafafa;
     filter: brightness(90%);
-    font-weight: bold;
+    text-align: center;
 }
 
 #mangaIntro h1{
@@ -18,26 +21,17 @@ body{
 
 #mangaIntro h3{
     font-size: 2vw;
-}
 
-
-#mangaThumb {
-position: relative;
 }
 
 .img-fluid{
-    position: absolute;
-    top: -50px;
+    display: block;
     filter: brightness(50%);
-    max-width: 100vw; /*bootstrap auto resize* combine with img-fluid*/
+    width: 100%; /*bootstrap auto resize* combine with img-fluid*/
     height: auto; /*bootstrap auto resize*/ 
-    z-index: -1;
+    z-index:-1;
 }
-
-
-
 #mangaInfo{
-    position: absolute;
     text-align: center;
     top: 600px;
 }
