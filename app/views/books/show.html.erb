@@ -10,35 +10,40 @@
     <%= stylesheet_link_tag 'show', media: 'all', 'data-turbolinks-track': 'reload'%>
     <title>Test Add Book</title>
 </head>
-       <div id= "mangaIntro">
- <%=  image_tag @book.banner.variant(resize:"2000x800"), class: "img-fluid"%>
+
+<div id= "mangaIntro">
+ <%=  image_tag @book.banner, class: "img-fluid"%>
  <div id="text">
-       <h1 > <%= @book.title%> </h1> 
-      <h3 > <%= @book.author%> </h3>
+    <h1 > <%= @book.title%> </h1> 
+    <h3 > <%= @book.author%> </h3>
  </div>
-      </div>
+</div>
+
 <div class="containerShow">
   <div class="row">
-  <div id="status">
-        <%= @book.status %> 
-  </div>
+    <div id="status">
+          <%= @book.status %> 
+    </div>
 
-       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="mangaInfo">
-      <label for="<%=@book.genre%>"> <h5>Genre:</h5> </label> <%= @book.genre %><br>
-      <label for="<%=@book.description%>"> <h5>Description:</h5> </label> <%= @book.description %> <br>
-      <%= link_to 'Edit Information', edit_book_path(@book) %> 
-      <%= link_to 'Destroy', @book, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="mangaInfo">
+     <%= @book.description %> 
     </div>
   </div>
+
+  <div class="volumes">
+  <h5><%= @book.title %> Volumes List</h5>
+    <% @book.volumes.each do |volumes| %>
+      <%= image_tag volumes.preview(resize: "300x400") %> 
+      <%= link_to "read more", volumes, :class => "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
 
-<div class="volumes">
-<h5><%= @book.title %> Volumes List</h5>
-  <% @book.volumes.each do |volumes| %>
-    <%= image_tag volumes.preview(resize: "300x400") %> 
-    <%= link_to "read more", volumes, :class => "btn btn-primary" %>
-  <% end %>
-</div>
+  <div class="settings">
+      <%= link_to 'Edit Information', edit_book_path(@book) %> 
+      <%= link_to 'Destroy', @book, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>

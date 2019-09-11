@@ -29,26 +29,26 @@
     </div>
 
     <div class="form-group">
-      <h5>Title <span style="color:red">*</span></h5>
+      <h5>Title<span style="color:red">*</span></h5>
           <%= f.text_field(:title, {:class => "form-control", placeholder: "Title", id: "title"}) %>
         <p class="error"><%= @book.errors.full_messages[0]%></p>
     </div>
 
     <div class="form-group">
-      <h5>Author(s) <span style="color:red">*</span></h5> 
+      <h5>Author(s)<span style="color:red">*</span></h5> 
       <%= f.text_field(:author, {:class => "form-control", placeholder: "Author", id: "author"}) %>
       <p class="error"><%= @book.errors.full_messages[1]%></p>
     </div>
 
     <div class="form-group">
-      <h5>Description <span style="color:red">*</span></h5> 
+      <h5>Description<span style="color:red">*</span></h5> 
       <%= f.text_area(:description, {:class => "form-control z-depth-1", placeholder: "Description", id: "exampleFormControlTextarea6", rows: "5", placeholder: "Description"}) %>
       <p class="error"><%= @book.errors.full_messages[2]%></p>
     </div>
 
     <div class="form-group">
-      <h5>Status <span style="color:red">*</span></h5>
-      <%= f.select :status, options_for_select([['Ongoing','Ongoing'],['Completed','Completed'],['Incomplete','Incomplete']]), :class => "custom-select", :prompt => "Choose Status", required: true %> 
+      <h5>Status<span style="color:red">*</span></h5>
+      <%= f.select :status, options_for_select([['Ongoing','Ongoing'],['Completed','Completed'],['Incomplete','Incomplete']]), :class => "custom-select", :prompt => "Choose Status"  %> 
     </div>
 
     <div class="form-group">

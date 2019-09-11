@@ -35,7 +35,14 @@ body{
     position: relative;
     top: 10px;
     border: none;
+    transition-duration: 0.5s;
 }
+
+#manga:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+
 
 #mangaBanner{
     height: 500px;
@@ -43,6 +50,12 @@ body{
     position: relative;
     top: 10px;
     border: none;
+    transition-duration: 0.5s;
+}
+
+#mangaBanner:hover{
+    cursor: pointer;
+    opacity: 0.7;
 }
 
 #thumbHeader{
@@ -110,14 +123,6 @@ body{
     top: 150px;
 }
 
-#manga:hover{
-    cursor: pointer;
-}
-
-#mangaBanner:hover{
-    cursor: pointer;
-}
-
 #mangaChap{
     height: 500px;
     width: 400px;
@@ -126,10 +131,12 @@ body{
     text-align: center;
     position: relative;
     bottom: 40px;
+    transition-duration: 0.5s;
 }
 
 #mangaChap:hover{
     cursor: pointer;
+    opacity: 0.7;
 }
 
 #uploadChap{

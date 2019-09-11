@@ -2,16 +2,24 @@ body{
     margin: 0;
 }
 
-nav{
+.navbar-light{
+    padding-left: 30px;
+    padding-right: 40px;
     height: 80px;
-    border-bottom: 2px solid black;
+    -webkit-box-shadow: 0px 5px 5px -1px rgba(0,0,0,0.32);
+    -moz-box-shadow: 0px 5px 5px -1px rgba(0,0,0,0.32);
+    box-shadow: 0px 5px 5px -1px rgba(0,0,0,0.32);
 }
 
+#search:hover{
+    cursor: pointer;
+}
 ul{
     list-style: none;
 }
 
 .navbar-light{
+    z-index: 1;
     background-color: #FFFFFF;
 }
 
@@ -48,3 +56,4 @@ a:hover{
     text-decoration: none;
     color: #FAFAFA;
 }
+
