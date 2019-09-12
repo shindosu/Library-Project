@@ -3,5 +3,3 @@ $(document).ready(function(){
         $('.settingContent').toggle();
     })
 })
-
-console.log("testing")

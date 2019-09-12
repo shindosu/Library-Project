@@ -17,7 +17,16 @@
       <h1 > <%= @book.title%> </h1> 
       <h3 > <%= @book.author%> </h3>
   </div>
+
+  <div class="settings">
+    <i class="fas fa-cog fa-1x" id="settingIcon"></i>
+      <div class="settingContent">
+        <a><%= link_to 'Edit Information', edit_book_path(@book) %> </a> <br>
+        <a><%= link_to 'Add Volumes/Chapters', edit_book_path(@book) %> </a><br>
+        <a><%= link_to 'Delete Manga', @book, method: :delete, data: { confirm: 'You can\'t restore deleted mangas. Are you sure?' } %></a>
+      </div>
   </div>
+</div>
 
 <div class="containerShow">
   <div class="row">
@@ -25,29 +34,17 @@
           <%= @book.status %> 
     </div>
 
-    <div class="settings">
-      <i class="fas fa-cog fa-2x" id="settingIcon"></i>
-      <div class="settingContent">
-        <ul>
-          <li><%= link_to 'Edit Information', edit_book_path(@book) %> </li> <br>
-          <li><%= link_to 'Add Volumes/Chapters', edit_book_path(@book) %> </li><br>
-          <li><%= link_to 'Delete Manga', @book, method: :delete, data: { confirm: 'You can\'t restore deleted mangas. Are you sure?' } %></li>
-        </ul>
-        </div>
-      </div>
-
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="mangaInfo">
      <%= @book.description %> 
     </div>
     
-  </div>
-
-  <div class="volumes">
+      <div class="volumes">
   <h5><%= @book.title %> Volumes List</h5>
     <% @book.volumes.each do |volumes| %>
       <%= image_tag volumes.preview(resize: "300x400") %> 
       <%= link_to "read more", volumes, :class => "btn btn-primary" %>
     <% end %>
+  </div>
   </div>
 </div>
 
