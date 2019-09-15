@@ -41,10 +41,6 @@ $('#banner').change(function(event) {
     document.querySelector('#bannerContent').style.display = "none";
     document.querySelector('#bannerName').style.display = "none";
   });
-   
-
-
-
 
 //Upload change color 
 $('#uploadImage').click(function(){
@@ -53,43 +49,18 @@ $('#uploadImage').click(function(){
   })
 });
 
-
-//Star rating 
-$(document).ready(function(){
-  $('#s1').click(function(){
-    $('#s1').css("color","#F4E409")
-  });
-  $('#s2').click(function(){
-    $('#s1,#s2').css("color","#F4E409")
-  });
-  $('#s3').click(function(){
-    $('#s1,#s2,#s3').css("color","#F4E409")
-  });
-  $('#s4').click(function(){
-    $('#s1,#s2,#s3,#s4').css("color","#F4E409")
-  });
-  $('#s5').click(function(){
-    $('#s1,#s2,#s3,#s4,#s5').css("color","#F4E409")
-  });
-});
-
-$('.star').click(function(){
-  var ratingIndex = $(this).index()+1; //get index number of a star
-  console.log(ratingIndex);
-})
-
 //PDF attach
 $('#volumes').change(function(){
   var fileInput = document.querySelector('#volumes'); //select files 
-  var fileLength = fileInput.files.length;
-  for (var i=0; i<fileLength; i++){
-    var fileName = this.files[i].name; //loops through the files uploaded, and gets the name attrobute
+  var fileLength = fileInput.files.length; //get the length or the numbers of the files uploaded
+  for (var i=0; i<fileLength; i++){ 
+    var fileName = this.files[i].name; //loops through the files uploaded, and gets the name attribute
     console.log(fileName);
     $(`<table class="uploadResults"> 
       <tbody>
         <tr>
           <td>
-          <i class="far fa-file-pdf" style="color: #FF0000"></i>${fileName}
+          <i class="far fa-file-pdf" style="color: #FF0000"></i> <input class="form-control" type="text" value=${fileName} name="books[mangaTitle]">
           </td>
         </tr>
       </tbody>

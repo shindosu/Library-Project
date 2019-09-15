@@ -56,6 +56,17 @@
     <%= f.number_field :rating %>
     </div>
 
+ <div class="form-group">
+      <h5>Add Volumes/Chapters <span style="color:red">*</span></h5><p class="error"><%= @book.errors.full_messages[3]%></p>
+      <div id="uploadChap" class="form-group">
+      <label for="volumes" id="mangaChap"><i class="fas fa-plus fa-3x innerContent" id="uploadImage" style="color: #279AF1;"></i><br><h4 id = "volumeName">Upload Volumes/Chapters</h4></label>
+      <%= f.file_field(:volumes, {id: "volumes", accept:"application/pdf", multiple: true}) %>
+      </div>
+       <p id="paraPDF"> PDF files only <br> Accepts multiple files</p>
+    </div>
+      <% @book.volumes.each do |volumes| %>
+        <%= volumes %>
+      <% end %>
     <%= f.button :submit, :class => "btn btn-primary", :id => "submit" %>
     
   <% end %>
