@@ -38,13 +38,17 @@
 </div>
 
 <div class="volumes">
-      <h1>Read <%= @book.title %></h1>
+      <h1>Read <%= @book.title %> <%= @book.mangaTitle.split(/[\[\]\,"]/).reject{ |c| c.blank? }%></h1>
       <div class="row">
-          <% @book.volumes.each do |volumes| %>
-            <%= image_tag volumes.preview(resize: "600x700") , class: "col-lg-3 col-md-6 col-sm-8 col-xs-12" %>
-            <%= link_to "Read", volumes, target: :_blank %>
-          <% end %>
+          <% @book.volumes.each_with_index do |volumes,index| %>
+           <%= image_tag volumes.preview(resize: "600x700") , class: "col-lg-3 col-md-6 col-sm-8 col-xs-12" %>
+            <%= link_to @book.mangaTitle.split(/[\[\]\,"]/).reject{ |c| c.blank? }[index], volumes, target: :_blank %>
+           <%= index%>
+               <% end %>
+
       </div>
+
+  
     </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

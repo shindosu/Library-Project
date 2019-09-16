@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_07_041029) do
+ActiveRecord::Schema.define(version: 2019_09_15_092109) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_09_07_041029) do
     t.datetime "updated_at", null: false
     t.string "status"
     t.string "genre"
+    t.string "mangaTitle"
   end
 
 end

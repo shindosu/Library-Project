@@ -21,12 +21,12 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
-
   end
 
   # GET /books/1/edit
   def edit
     @book = Book.find(params[:id])
+    
   end
 
   # POST /books
@@ -75,6 +75,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:books).permit(:title, :author, :description, :status, :rating, :file, :banner, volumes: [],genre:[])
+      params.require(:books).permit(:title, :author, :description, :status, :rating, {mangaTitle: []}, :file, :banner, volumes: [],genre:[])
     end
 end

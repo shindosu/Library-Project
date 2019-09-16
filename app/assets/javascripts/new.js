@@ -54,17 +54,12 @@ $('#volumes').change(function(){
   var fileInput = document.querySelector('#volumes'); //select files 
   var fileLength = fileInput.files.length; //get the length or the numbers of the files uploaded
   for (var i=0; i<fileLength; i++){ 
-    var fileName = this.files[i].name; //loops through the files uploaded, and gets the name attribute
+    var fileName = this.files[i].name.split('.')[0]; //loops through the files uploaded, and gets the name attribute
     console.log(fileName);
-    $(`<table class="uploadResults"> 
-      <tbody>
-        <tr>
-          <td>
-          <i class="far fa-file-pdf" style="color: #FF0000"></i> <input class="form-control" type="text" value=${fileName} name="books[mangaTitle]">
-          </td>
-        </tr>
-      </tbody>
-     </table>`).insertBefore($('#paraPDF') ) 
+    $(`<div class="uploadResults"> 
+        <i class="far fa-file-pdf fa-2x" style="color: #FF0000; margin-right: 10px; margin-top: 3px"></i>
+        <input class="mangaTitle form-control" type="text" value="${fileName}" name="books[mangaTitle][]" id="${fileName}" multiple>
+     </div>`).insertAfter($('#paraPDF') ) 
   }
 });
 
@@ -84,7 +79,7 @@ $('#volumes').change(function(){
         <%= check_box_tag 'music[genre][]', "Slice of Life", checked('Slice of Life'), id: 'genre_slice_of_life' %> Slice of Life <br>
         <%= check_box_tag 'music[genre][]', "Supernatural", checked('Supernatural'), id: 'genre_supernatural' %> Supernatural <br>
        
-             <% @book_genre.each do |genre| %>
+          <% @book_genre.each do |genre| %>
       <%= f.check_box :genre,
           {multiple: true,
           checked: @book.genre.present? ? @book.genre.split(",").include
