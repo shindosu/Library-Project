@@ -89,12 +89,51 @@ a{
 
 .volumes{
     position: relative;
-    top: 150px;
+    top: 200px;
 
 }
 
 .volumes h1{
     font-size: 3vw;
     border-bottom: 2px solid black;
+    padding-left: 30px;
 }
 
+#mangaCardswrapper{
+    padding-left:110px;
+}
+
+.mangaCards{
+    display: inline-block;
+    margin-right:20px;
+    text-align: center;
+}
+
+.mangasTitle{
+    display: block;
+    position: relative;
+    left: 20px;
+    font-size: 2vw;
+}
+
+@media screen and (max-width: 535px){
+    #mangaCardswrapper{
+        padding-left: 50px;
+    }
+}
+
+@media screen and (max-width: 375px){
+
+    .previews{
+        width: 100px;
+        height:150px;
+    }
+
+    .mangasTitle{
+        text-align: center;
+    }
+
+    #mangaCardswrapper{
+        text-align: center;
+    }
+}

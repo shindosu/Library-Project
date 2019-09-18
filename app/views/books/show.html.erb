@@ -38,14 +38,16 @@
 </div>
 
 <div class="volumes">
-      <h1>Read <%= @book.title %> <%= @book.mangaTitle.split(/[\[\]\,"]/).reject{ |c| c.blank? }%></h1>
+      <h1>Read <%= @book.title %> </h1>
       <div class="row">
-          <% @book.volumes.each_with_index do |volumes,index| %>
-           <%= image_tag volumes.preview(resize: "600x700") , class: "col-lg-3 col-md-6 col-sm-8 col-xs-12" %>
-            <%= link_to @book.mangaTitle.split(/[\[\]\,"]/).reject{ |c| c.blank? }[index], volumes, target: :_blank %>
-           <%= index%>
-               <% end %>
-
+<ul id="mangaCardswrapper">
+        <% @book.volumes.each_with_index do |volumes,index| %>
+         <li class="mangaCards"> <br>
+         <%= image_tag volumes.preview(resize: "200x300"), class: "previews"%>
+          <%= link_to @book.mangaTitle.split(/[\[\]\,"]/).reject{ |c| c.blank? }.sort[index], volumes, target: :_blank, class: "mangasTitle" %>
+         </li> 
+        <% end %>
+        </ul>
       </div>
 
   
