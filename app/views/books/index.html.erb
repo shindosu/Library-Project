@@ -19,11 +19,12 @@
   </div>
   <div class="row">
     <% @books.each do |book| %>
-    <ul class="mangaCards">
+    <ul class="indexMangaCards">
       <div class="manga col lg-3 col-md-3 col-sm-6 col-xs-6">
-        <li><a href="<%=book_path(book) %>"><%= image_tag book.file.variant(resize: "180x250!"), class: "thumbnails"%></a>  <!--image magick way to scale: .variant(resize) => only applies to images--></li><br>
+        <li><a href="<%=book_path(book) %>"><%= image_tag book.file.variant(resize: "180x250!"), class: "thumbnails"%></a><br>
+        <%= link_to book.title, book%>  <!--image magick way to scale: .variant(resize) => only applies to images--></li>
       </div> 
-      <li class = "mangaTitle"><a ><%= link_to book.title, book%></a></li>
+      </a></li>
     </ul>
   <% end %>
   </div>

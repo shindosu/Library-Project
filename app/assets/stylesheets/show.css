@@ -5,10 +5,6 @@ html, body{
     overflow-x: hidden;
 }
 
-.containerShow{
-    position: relative; 
-    bottom: 50px;
-}
 #mangaIntro{
     position: relative;/*position*/ 
     display: inline-block;/*position*/ 
@@ -69,13 +65,15 @@ a{
     font-size: 1vw;
 }
 
-.row{
-    position: relative;
+.containerShow{
+    position: relative; 
+    bottom: 50px;
 }
-.row #mangaInfo{
-    position: absolute;
-    left: 40px;
-    top: 5px;
+
+#mangaInfo{
+    position: relative;
+    left: 20px;
+    top: 80px;
     font-weight: bold;
     font-size: 2vw;
     padding: 5px;
@@ -83,24 +81,22 @@ a{
 
 #status{
     background-color:beige;
-    font-size: 3vw;
-    width: 12vw;
+    font-size: 2vw;
+    width: 8.1vw;
 }
 
-.volumes{
-    position: relative;
-    top: 200px;
-
-}
-
-.volumes h1{
+#mangaHeader{
     font-size: 3vw;
     border-bottom: 2px solid black;
-    padding-left: 30px;
+    width: 93vw;
+}
+
+#description{
+    font-size: 2vw;
 }
 
 #mangaCardswrapper{
-    padding-left:110px;
+    padding-left:40px;
 }
 
 .mangaCards{
@@ -118,7 +114,25 @@ a{
 
 @media screen and (max-width: 535px){
     #mangaCardswrapper{
-        padding-left: 50px;
+        padding-left: 20px;
+    }
+}
+
+@media screen and (max-width: 411px){
+
+    .previews{
+        width: 100px;
+        height:150px;
+    }
+    #mangaInfo{
+        left: 10px;
+    }
+    .mangasTitle{
+        text-align: center;
+    }
+
+    #mangaCardswrapper{
+        padding-left: 60px;
     }
 }
 
@@ -128,12 +142,15 @@ a{
         width: 100px;
         height:150px;
     }
-
+    #mangaInfo{
+        left: 10px;
+    }
     .mangasTitle{
         text-align: center;
     }
 
     #mangaCardswrapper{
-        text-align: center;
+        padding-left: 50px;
     }
+
 }
