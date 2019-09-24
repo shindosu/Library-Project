@@ -64,13 +64,15 @@
       </div>
        <p id="paraPDF"> PDF files only <br> Accepts multiple files</p>
     </div>
+    <ul id="uploadResults"> 
       <% @book.volumes.each_with_index do |volumes,index| %>
-      <div class="uploadResults"> 
-        <i class="far fa-file-pdf fa-2x" style="color: #FF0000; margin-right: 10px; margin-top: 3px"></i>
-        <input class="mangaTitle form-control" type="text" value="<%=@book.mangaTitle.split(/[\[\]\,"]/).reject{ |c| c.blank? }[index]%>" name="books[mangaTitle][]">
-     </div>
+       <li> <%= link_to 'Delete', volumes, method: :delete, data: { confirm: 'You can\'t restore deleted mangas. Are you sure?' }, :remote => true, :class=>'deleteManga'%>
+       <i class="far fa-file-pdf fa-2x" style="color: #FF0000; margin-right: 10px; margin-top: 3px"></i>
+        <input class="mangaTitle form-control" type="text" value="<%=@book.mangaTitle.split(/[\[\]\,"]/).reject{ |c| c.blank? }.sort[index]%>" name="books[mangaTitle][]">
+       </li> <br>
       <% end %>
-    <%= f.button :submit, :class => "btn btn-primary", :id => "submit" %>
+        </ul>
+        <%= f.button :submit, :class => "btn btn-primary", :id => "submit" %>
   <% end %>
 </div>
 

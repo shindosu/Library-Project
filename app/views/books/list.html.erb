@@ -41,11 +41,9 @@
     </div>
 
     <div id="mangaList">
-        <ul>
-            <% @books.each do |book|%>
-            <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
-            
-            <% end %>
+        <% @books.each do |book|%>
+                <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+        <% end %>
         </ul>
     </div>
 

@@ -79,10 +79,17 @@ a{
     padding: 5px;
 }
 
-#status{
-    background-color:beige;
+#statusOngoing{
+    background-color: beige;
     font-size: 2vw;
-    width: 8.1vw;
+    width: 8.5vw;
+    padding-left: 2px;
+}
+
+#statusCompleted{
+    width: 150px;
+    background-color: red;
+    padding-left: 3px;
 }
 
 #mangaHeader{
@@ -93,6 +100,7 @@ a{
 
 #description{
     font-size: 2vw;
+    width: 93vw;
 }
 
 #mangaCardswrapper{
@@ -116,6 +124,14 @@ a{
     #mangaCardswrapper{
         padding-left: 20px;
     }
+}
+
+.previews{
+    transition-duration: 300ms;
+}
+
+.previews:hover{
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 411px){

@@ -59,13 +59,22 @@ class BooksController < ApplicationController
   # DELETE /books/1
   # DELETE /books/1.json
   def destroy
-    @book.destroy
     respond_to do |format|
+      format.js {render :layout => false}
       format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
-  
+
+  def search #searches for manga titles
+    if params[:search].blank?
+    redirect_to(books_url, notice:"Enter a word at least!") and return
+    else
+     @parameter = params[:search]
+     @results = Book.where("title LIKE ?", "%#{@parameter}%")
+    end
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

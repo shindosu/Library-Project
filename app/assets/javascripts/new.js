@@ -56,13 +56,18 @@ $('#volumes').change(function(){
   for (var i=0; i<fileLength; i++){ 
     var fileName = this.files[i].name.split('.')[0]; //loops through the files uploaded, and gets the name attribute
     console.log(fileName);
-    $(`<div class="uploadResults"> 
-        <i class="far fa-file-pdf fa-2x" style="color: #FF0000; margin-right: 10px; margin-top: 3px"></i>
-        <input class="mangaTitle form-control" type="text" value="${fileName}" name="books[mangaTitle][]" id="${fileName}" multiple>
-     </div>`).insertAfter($('#paraPDF') ) 
-  }
-});
 
+    //check the create form input exists 
+    if ($('#uploadResults').length){
+    $('#uploadResults').append($(`
+    <li><i class="far fa-file-pdf fa-2x" style="color: #FF0000; margin-right: 10px; margin-top: 3px"></i>
+    <input class="mangaTitle form-control" type="text" value="${fileName}" name="books[mangaTitle][]" id="${fileName}" multiple></li>`))}
+      //check if the edit form input exists
+    else if ($('.uploadResults')){
+    $(`<li><i class="far fa-file-pdf fa-2x" style="color: #FF0000; margin-right: 10px; margin-top: 3px"></i>
+        <input class="mangaTitle form-control" type="text" value="${fileName}" name="books[mangaTitle][]" id="${fileName}" multiple></li>`).insertAfter($('#paraPDF'))};
+    };
+  });
 
 /*
  <%= check_box_tag 'music[genre][]', "Action", checked('Action'), id: 'genre_action' %> Action <br>

@@ -1,0 +1,20 @@
+
+<div class="container">
+  <div class="latestUploads">
+    <h2>Search results</h2>
+  </div>
+  <div class="row">
+<%@results.each do |result|%>
+<ul class="indexMangaCards">
+      <div class="manga col lg-3 col-md-3 col-sm-6 col-xs-6">
+        <li><%= link_to result do%>
+<%= image_tag result.file.variant(resize: "180x250!"), class: "thumbnails"%> <br>
+<%end%><br>
+        <%=link_to result.title, result%> <!--image magick way to scale: .variant(resize) => only applies to images--></li>
+      </div> 
+      </li>
+    </ul>
+<%end%>
+  </div>
+</div>
+
