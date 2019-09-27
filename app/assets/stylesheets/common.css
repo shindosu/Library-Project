@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    font-family: 'Circular', Avenir, sans-serif;
 }
 
 .navbar-light{
@@ -30,6 +31,11 @@ ul{
 .nav-item{
     position:relative;
     top: 5px;
+    font-family: 'Circular', Avenir, sans-serif;
+    font-size: 17px;
+    margin-right: 40px;
+    color: #4b4b4b;
+    transition-duration: 200ms;
 }
 
 .navbar-brand{
@@ -38,18 +44,13 @@ ul{
 }
 
 a{
-    font-family: 'Circular', Avenir, sans-serif;
-    font-size: 17px;
-    margin-right: 40px;
-    color: #4b4b4b;
+    transition-duration: 300ms;
 }
 
 a:hover{
     color: #9c9c9c;
     text-decoration: none;
-    transition-delay: 1000;
     background-color: transparent;
-    color: none;
 }
 
 .logo:hover{

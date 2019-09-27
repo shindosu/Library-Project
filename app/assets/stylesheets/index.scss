@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    font-family: 'Circular', Avenir, sans-serif;
+    background: #FFFFFF;
+}
+
+.container{
+    position: relative;
+    top:100px;
+}
+
+.row{
+    position: relative;
+    top: 50px;
+}
+
+.mangaCard{
+    padding: 0;
+    margin-top: 20px;
+}
+
+.manga{
+    padding: 0;
+}
+
+.mangaTitle{
+    position: absolute;
+    text-align: center;
+    color:red;
+}
+
+.latestUploads{
+    position: relative;
+    bottom: 30px;
+    border-bottom: 2px #FD9D34 solid;
+    color: #FD9D34;
+    font-weight: 450;
+}
+
+.mangaCardsList{
+    text-align: center;
+    margin-right: 50px;
+}
+
+.name{
+    margin-right:0;
+    width: 180px;
+    height: 50px;
+    text-align: center;
+    background-color: #2E2E2E;
+    color:white;
+    font-size: 17px;
+    transition-duration: 500ms;
+}
+
+.name p{
+    position: relative;
+    top:5px;
+}
+
+.mangaCardsList:hover{
+    cursor:pointer;
+    .name{    
+        background-color: #FD9D34;
+        cursor: pointer;
+
+    }
+}

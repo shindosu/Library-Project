@@ -21,8 +21,10 @@
   <div class="settings">
     <i class="fas fa-cog fa-1x" id="settingIcon"></i>
       <div class="settingContent">
-        <a><%= link_to 'Edit Information', edit_book_path(@book) %> </a> <br>
-        <a><%= link_to 'Delete Manga', @book, method: :delete, data: { confirm: 'You can\'t restore deleted mangas. Are you sure?' } %></a>
+      <ol>
+        <%= link_to edit_book_path(@book) do %> <li><i class="fas fa-edit"></i> Edit Information</li> <%end%> <br>
+        <%= link_to @book, method: :delete, data: { confirm: 'You can\'t restore deleted mangas. Are you sure?' } do %><li><i class="fas fa-trash-alt"></i> Delete Manga</li><%end%>
+      </ol>
       </div>
   </div>
 </div>
@@ -34,7 +36,7 @@
   <%elsif @book.status == "Completed"%>
     <h3 id="statusCompleted" ><%= @book.status %> </h3>
   <%else%>
-    <h3 id="statusCompleted" ><%= @book.status %> </h3>
+    <h3 id="statusCancelled" ><%= @book.status %> </h3>
   <%end%>
     <h4 id="description"><%= @book.description %></h4> <br> 
     <h1 id="mangaHeader">Read <%= @book.title %> </h1> <br>
@@ -43,8 +45,8 @@
         <li class="mangaCards"> <br>
         <%= link_to volumes, target: :_blank do%>
           <%= image_tag volumes.preview(resize: "200x300"), class: "previews"%>
-          <%end%>
           <%= link_to @book.mangaTitle.split(/[\[\]\,"]/).reject{ |c| c.blank? }.sort_by{|index| index.scan(/\d+/).first.to_i}[index], volumes, target: :_blank, class: "mangasTitle" %>
+        <%end%>
         </li> 
       <% end %>
       </ul>

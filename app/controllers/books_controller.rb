@@ -26,7 +26,12 @@ class BooksController < ApplicationController
   # GET /books/1/edit
   def edit
     @book = Book.find(params[:id])
-    
+  end
+
+  def delete_attachment
+    @volumes = ActiveStorage::Blob.find_signed(params[:id])
+    @volumes.purge
+    redirect_to books_url
   end
 
   # POST /books
@@ -59,8 +64,8 @@ class BooksController < ApplicationController
   # DELETE /books/1
   # DELETE /books/1.json
   def destroy
+    @book.destroy
     respond_to do |format|
-      format.js {render :layout => false}
       format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
       format.json { head :no_content }
     end
@@ -74,7 +79,6 @@ class BooksController < ApplicationController
      @results = Book.where("title LIKE ?", "%#{@parameter}%")
     end
   end
-
 
   private
     # Use callbacks to share common setup or constraints between actions.

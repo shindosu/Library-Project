@@ -66,9 +66,9 @@
     </div>
     <ul id="uploadResults"> 
       <% @book.volumes.each_with_index do |volumes,index| %>
-       <li> <%= link_to 'Delete', volumes, method: :delete, data: { confirm: 'You can\'t restore deleted mangas. Are you sure?' }, :remote => true, :class=>'deleteManga'%>
+       <li> <%= link_to 'Remove',  method: :delete, data:{confirm: 'Are you sure?'}%> 
        <i class="far fa-file-pdf fa-2x" style="color: #FF0000; margin-right: 10px; margin-top: 3px"></i>
-        <input class="mangaTitle form-control" type="text" value="<%=@book.mangaTitle.split(/[\[\]\,"]/).reject{ |c| c.blank? }.sort[index]%>" name="books[mangaTitle][]">
+        <input class="mangaTitle form-control" type="text" value="<%=@book.mangaTitle.split(/[\[\]\,"]/).reject{ |c| c.blank? }.sort_by{|index| index.scan(/\d+/).first.to_i}[index]%>" name="books[mangaTitle][]">
        </li> <br>
       <% end %>
         </ul>

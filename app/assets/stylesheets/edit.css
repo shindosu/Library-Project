@@ -3,3 +3,17 @@
     top: 100px;
     left: 40px;
 }
+
+.deleteManga{
+    color: #2e2e2e;
+}
+
+.deleteManga:hover{
+    color: #9c9c9c;
+}
+
+.deleteManga:visited{
+    color: #2e2e2e;
+}
+
+/*<%= link_to 'Delete',　delete_attachment, method: :delete, data: { confirm: 'You can\'t restore deleted mangas. Are you sure?' }, :remote => true, :class=>'deleteManga'%>*/

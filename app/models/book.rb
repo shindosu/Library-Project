@@ -5,6 +5,7 @@ class Book < ApplicationRecord
     validates :title, presence: true
     validates :author, presence: true
     validates_presence_of :description
+    validates :status, presence: true
     validates_presence_of :volumes
     
     before_save do

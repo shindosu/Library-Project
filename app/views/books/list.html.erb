@@ -8,47 +8,337 @@
     <title>Document</title>
 </head>
 <body>
-    
+
+ <div id="explore">
+ <h1>Explore our Collection!</h1>
+ </div>    
 <div class="container">
     <div class="chronological">
-        <button class="btn btn-primary" value="#">#</button>
-        <button class="btn btn-primary" value="A">A</button>
-        <button class="btn btn-primary" value="A">B</button>
-        <button class="btn btn-primary" value="A">C</button>
-        <button class="btn btn-primary" value="A">D</button>
-        <button class="btn btn-primary" value="A">E</button>
-        <button class="btn btn-primary" value="A">F</button>
-        <button class="btn btn-primary" value="A">G</button>
-        <button class="btn btn-primary" value="A">H</button>
-        <button class="btn btn-primary" value="A">I</button>
-        <button class="btn btn-primary" value="A">J</button>
-        <button class="btn btn-primary" value="A">K</button>
-        <button class="btn btn-primary" value="A">L</button>
-        <button class="btn btn-primary" value="A">M</button>
-        <button class="btn btn-primary" value="A">N</button>
-        <button class="btn btn-primary" value="A">O</button>
-        <button class="btn btn-primary" value="A">P</button>
-        <button class="btn btn-primary" value="A">Q</button>
-        <button class="btn btn-primary" value="A">R</button>
-        <button class="btn btn-primary" value="A">S</button>
-        <button class="btn btn-primary" value="A">T</button>
-        <button class="btn btn-primary" value="A">U</button>
-        <button class="btn btn-primary" value="A">V</button>
-        <button class="btn btn-primary" value="A">W</button>
-        <button class="btn btn-primary" value="A">X</button>
-        <button class="btn btn-primary" value="A">Y</button>
-        <button class="btn btn-primary" value="A">Z</button>
+       <a href="#number"><button class="btn btn-primary" value="#">#</button></a>
+       <a href="#A"><button class="btn btn-primary" value="A">A</button></a>
+       <a href="#B"><button class="btn btn-primary" value="A">B</button></a>
+       <a href="#C"><button class="btn btn-primary" value="A">C</button></a>
+       <a href="#D"><button class="btn btn-primary" value="A">D</button></a>
+       <a href="#E"><button class="btn btn-primary" value="A">E</button></a>
+       <a href="#F"><button class="btn btn-primary" value="A">F</button></a>
+       <a href="#G"><button class="btn btn-primary" value="A">G</button></a>
+       <a href="#H"><button class="btn btn-primary" value="A">H</button></a>
+       <a href="#I"><button class="btn btn-primary" value="A">I</button></a>
+       <a href="#J"><button class="btn btn-primary" value="A">J</button></a>
+       <a href="#K"><button class="btn btn-primary" value="A">K</button></a>
+       <a href="#L"><button class="btn btn-primary" value="A">L</button></a>
+       <a href="#M"><button class="btn btn-primary" value="A">M</button></a>
+       <a href="#N"><button class="btn btn-primary" value="A">N</button></a>
+       <a href="#O"><button class="btn btn-primary" value="A">O</button></a>
+       <a href="#P"><button class="btn btn-primary" value="A">P</button></a>
+       <a href="#Q"><button class="btn btn-primary" value="A">Q</button></a>
+       <a href="#R"><button class="btn btn-primary" value="A">R</button></a>
+       <a href="#S"><button class="btn btn-primary" value="A">S</button></a>
+       <a href="#T"><button class="btn btn-primary" value="A">T</button></a>
+       <a href="#U"><button class="btn btn-primary" value="A">U</button></a>
+       <a href="#V"><button class="btn btn-primary" value="A">V</button></a>
+       <a href="#W"><button class="btn btn-primary" value="A">W</button></a>
+       <a href="#X"><button class="btn btn-primary" value="A">X</button></a>
+       <a href="#Y"><button class="btn btn-primary" value="A">Y</button></a>
+       <a href="#Z"><button class="btn btn-primary" value="A">Z</button></a>
     </div>
 
-    <div id="mangaList">
+    <div class="listdiv" id="numbers">
+    <h2 class="listHeader" id="number">#</h2>
         <% @books.each do |book|%>
-                <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <% if book.title.first.is_a? Numeric%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
         <% end %>
-        </ul>
+        <%end%>
     </div>
 
-</div>
+        <div class="listdiv" >
+        <h2 class="listHeader" id="A">A</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "A"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
 
+            <div class="listdiv">
+            <h2 class="listHeader" id="B">B</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "B"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+            <div class="listdiv" >
+            <h2 class="listHeader" id="C">C</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "C"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+            <div class="listdiv">
+            <h2 class="listHeader" id="D">D</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "D"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+            <div class="listdiv">
+            <h2 class="listHeader" id="E">E</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "E"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+            <div class="listdiv" id="F">
+            <h2 class="listHeader">F</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "F"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+            <div class="listdiv" id="G">
+            <h2 class="listHeader">G</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "G"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+            <div class="listdiv" id="H">
+            <h2 class="listHeader">H</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "H"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+            <div class="listdiv" id="I">
+            <h2 class="listHeader">I</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "I"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+            <div class="listdiv" id="J">
+            <h2 class="listHeader">J</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "J"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+            <div class="listdiv" id="K">
+            <h2 class="listHeader">K</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "K"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+            <div class="listdiv" id="L">
+            <h2 class="listHeader">L</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "L"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+            <div class="listdiv" id="M">
+            <h2 class="listHeader">M</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "M"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+            <div class="listdiv" id="N">
+            <h2 class="listHeader">N</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "N"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+            <div class="listdiv" id="O">
+            <h2 class="listHeader">O</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "O"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+            <div class="listdiv" id="P">
+            <h2 class="listHeader">P</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "P"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+                <div class="listdiv" id="Q">
+                <h2 class="listHeader">Q</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "Q"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+                <div class="listdiv" id="R">
+                <h2 class="listHeader">R</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "R"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+                <div class="listdiv" id="S">
+                <h2 class="listHeader">S</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "S"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+                <div class="listdiv" id="T">
+                <h2 class="listHeader">T</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "T"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+                <div class="listdiv" id="U">
+                <h2 class="listHeader">U</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "U"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+                <div class="listdiv" id="V">
+                <h2 class="listHeader">V</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "V"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+                <div class="listdiv" id="W">
+                <h2 class="listHeader">W</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "W"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+                <div class="listdiv" id="X">
+                <h2 class="listHeader">X</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "X"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+                <div class="listdiv" id="Y">
+                <h2 class="listHeader">Y</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "Y"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
+
+                <div class="listdiv" id="Z">
+                <h2 class="listHeader">Z</h2>
+        <% @books.each do |book|%>
+            <% if book.title.first == "Z"%>
+             <li> <a href="<%=book_path(book) %>"><%= book.title %></a> </li>
+            <%else%>
+            <%= ""%>
+        <% end %>
+        <%end%>
+    </div>
 
 </body>
 </html>

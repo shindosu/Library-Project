@@ -18,13 +18,16 @@
     <h2>Latest Uploads</h2>
   </div>
   <div class="row">
-    <% @books.each do |book| %>
     <ul class="indexMangaCards">
-      <div class="manga col lg-3 col-md-3 col-sm-6 col-xs-6">
-        <li><a href="<%=book_path(book) %>"><%= image_tag book.file.variant(resize: "180x250!"), class: "thumbnails"%></a><br>
-        <%= link_to book.title, book%>  <!--image magick way to scale: .variant(resize) => only applies to images--></li>
-      </div> 
-      </a></li>
+    <% @books.each do |book| %>
+        <%= link_to book_path(book) do %>
+         <li class="mangaCardsList"> <div class="manga col lg-3 col-md-3 col-sm-6 col-xs-6">
+            <%= image_tag book.file.variant(resize: "180x250!"), class: "thumbnails"%><br>
+          </div> 
+        <div class= "name">
+        <p><%= book.title%> </p> <!--image magick way to scale: .variant(resize) => only applies to images-->
+        </div></li>
+      <%end%>
     </ul>
   <% end %>
   </div>

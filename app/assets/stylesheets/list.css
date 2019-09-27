@@ -1,9 +1,58 @@
-#mangaList{
-    border: 1px solid red;
-    position: relative;
-    top: 20px;
+body{
+    background: #FFFFFF;
+    overflow-x:hidden;
 }
 
+#explore h1{
+    border-bottom: 2px #FD9D34 solid;
+    color:#FD9D34;
+    margin-top:50px;    
+    font-size: 30px;
+    width: 60vw;
+    position: relative;
+    left: 100px;
+    line-height: 2em;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    color: red;
+}
 li:hover{
     cursor: pointer;
+}
+
+.listHeader{
+    border-bottom: 2px #FD9D34 solid;
+    width: 30px;
+    margin-top: 50px;
+    color:#FD9D34;
+    text-align: center;
+    
+}
+
+.listSection{
+    height: 100vh;
+}
+
+.btn-primary{
+    background-color:#FD9D34;
+    border:none;
+    transition-duration: 500ms;
+}
+
+.btn-primary:hover{
+    background-color:#FD9D34;
+    opacity: 0.8;
+}
+
+.listdiv{
+    height:100vh;
+}
+
+.listdiv a{
+    font-size: 1.8vw;
 }
