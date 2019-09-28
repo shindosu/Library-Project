@@ -14,23 +14,28 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
+
   <div class="latestUploads">
     <h2>Latest Uploads</h2>
   </div>
+
   <div class="row">
-    <ul class="indexMangaCards">
     <% @books.each do |book| %>
-        <%= link_to book_path(book) do %>
-         <li class="mangaCardsList"> <div class="manga col lg-3 col-md-3 col-sm-6 col-xs-6">
-            <%= image_tag book.file.variant(resize: "180x250!"), class: "thumbnails"%><br>
-          </div> 
-        <div class= "name">
-        <p><%= book.title%> </p> <!--image magick way to scale: .variant(resize) => only applies to images-->
-        </div></li>
-      <%end%>
-    </ul>
-  <% end %>
+      <% if book.file.attached? %>
+        <%= link_to book_path(book) do %>  
+          <div class="mangaCardsList col-lg-2 col-md-6 col-sm-6 col-xs-6"> 
+            <div class="manga">
+              <%= image_tag book.file.variant(resize: "180x250!"), class: "thumbnails"%><br>
+            </div> 
+            <div class= "name">
+            <p><%= book.title%> </p> <!--image magick way to scale: .variant(resize) => only applies to images-->
+            </div>
+          </div>
+          <%end%>
+        <%end%>
+      <% end %>
   </div>
+
 </div>
 
 
