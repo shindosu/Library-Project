@@ -1,16 +1,27 @@
 body{
     margin: 0;
-    font-family: 'Circular', Avenir, sans-serif;
+    padding: 0;
 }
 
-.navbar-light{
-    padding-left: 30px;
-    padding-right: 40px;
-    height: 80px;
-    -webkit-box-shadow: 0px 5px 5px -1px rgba(0,0,0,0.32);
-    -moz-box-shadow: 0px 5px 5px -1px rgba(0,0,0,0.32);
-    box-shadow: 0px 5px 5px -1px rgba(0,0,0,0.32);
+nav{
+    display: flex; 
+    justify-content:space-around;
+    align-items: center;
+    height: 96px;
+    background-color: #FFFFFF;
+    font-family: 'Circular', Avenir, sans-serif;
+    -webkit-box-shadow: 0px 4px 7px 2px rgba(0,0,0,0.53); 
+box-shadow: 0px 4px 7px 2px rgba(0,0,0,0.53);
 }
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    position: absolute;
+    left: 298px;
+    top: 43px;
+}
+
 
 #search:hover{
     cursor: pointer;
@@ -41,6 +52,7 @@ ul{
 .navbar-brand{
     font-family: 'Circular', Avenir, sans-serif;
     font-size: 30px;
+    color: black;
 }
 
 a{
@@ -61,5 +73,50 @@ a:hover{
 #searchInput{
     display:none;
     width: 300px;
+    background: transparent;
+    border-bottom: 1px solid #4b4b4b;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0em;
+}
+
+button:focus{
+    outline:transparent !important;
+}
+
+@media screen and (max-width: 991px){
+
+    body{
+        overflow-x: hidden;
+    }
+    #nav-links{
+        position: relative;
+    top: 60px;
+    text-align: center;
+    }
+
+    #navbarSupportedContent{
+    background-color: black;
+    opacity: 0.8;
+    position: absolute;
+    right: 0px;
+    height: 100vh;
+    top: 100px;
+    width: 40vw;
+}
+
+.navItem{
+
+    position: relative;
+    top: 68px;
+    text-align: center;
+}
+
+#searchInput{
+    border-bottom: 1px solid white;
+}
+
+
 }
 
